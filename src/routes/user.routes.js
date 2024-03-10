@@ -5,10 +5,10 @@ import { isSuperAdmin } from "../middlewares/isSuperAdmin.js";
 
 const router = Router();
 
-router.get('/', auth, isSuperAdmin, getUsers)
-router.get('/profile', auth, getUserProfile)
-router.put('/profile', auth, updateUserProfile)
-router.delete('/:id', auth, isSuperAdmin, deleteUserById)
+router.get('/', auth, isSuperAdmin, getUsers)     //Ok
+router.get('/profile', auth, getUserProfile)      //Ok  
+router.put('/profile', auth, updateUserProfile)   //Ok
+router.delete('/:id', auth, isSuperAdmin, deleteUserById) //Ok
 
 
 export default router;
