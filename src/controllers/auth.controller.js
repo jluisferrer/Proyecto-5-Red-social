@@ -1,112 +1,95 @@
-import bcrypt from "bcrypt";
-import User from "../models/User.js";
 import jwt from "jsonwebtoken";
-
+import User from "../models/User.js";
+import { isValidMail } from "../helper/mailValidation.js";
+import { isValidPassword } from "../helper/passwordValidation.js";
 
 export const register = async (req, res) => {
 	try {
-		const email = req.body.email;
-		const password = req.body.password;
+		const { username, email, password } = req.body
 
-		if (password.length < 6 || password.length > 10) {
+
+		if (!username || !email || !password) {
 			return res.status(400).json({
 				success: false,
-				message: "Password must contain between 6 and 10 characters",
-			});
+				message: "All fields are required"
+			})
 		}
+		//Validamos email y password
+		const validMail = isValidMail(email);
+		const validPassword = isValidPassword(password);
 
-		const validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-		if (!validEmail.test(email)) {
+		if (!validMail || !validPassword) {
 			return res.status(400).json({
 				success: false,
-				message: "format email invalid",
-			});
+				message: "format email or password invalid"
+			})
 		}
-
-		const passwordEncrypted = bcrypt.hashSync(password, 5);
-
+		//creamos nuevo usuario con username, mail y password.
 		const newUser = await User.create({
-			email: email,
-			password: passwordEncrypted,
-		});
-
+			username,
+			email,
+			password
+		})
 		res.status(201).json({
 			success: true,
 			message: "User registered succesfully",
-			data: newUser,
-		});
+		})
 	} catch (error) {
 		res.status(500).json({
 			success: false,
 			message: "User cant be registered",
-			error: error,
-		});
+			error: error
+		})
 	}
-};
+}
 
 export const login = async (req, res) => {
 	try {
-		const email = req.body.email;
-		const password = req.body.password;
-
+		const { email, password } = req.body; //Validamos body
 		if (!email || !password) {
-			return res.status(400).json({
+			 res.status(400).json({
 				success: false,
-				message: "email and password are mandatories",
-			});
-		}
+				message: "Email and password are required"
+			})
+		}console.log("yeee")
+		const validEmail = isValidMail(email)
+		const validPassword = isValidPassword(password)
 
-		const validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-		if (!validEmail.test(email)) {
-			return res.status(400).json({
-				success: false,
-				message: "Email format is not valid",
-			});
-		}
-
-		const user = await User.findOne({
-			email: email,
-		});
-
-		console.log(user);
-
-		if (!user) {
+		if (!validPassword || !validEmail) {
 			res.status(400).json({
 				success: false,
-				message: "Email or password invalid",
-			});
-		}
+				message: "Email or password invalid"
+			})
+		}console.log("yeee")
+		const user = await User.findOne({ email: email })
 
-		const isValidPassword = bcrypt.compareSync(password, user.password);
-
-		if (!isValidPassword) {
-			return res.status(400).json({
+		if (!user) {
+			 res.status(400).json({
 				success: false,
-				message: "Email or password invalid",
-			});
-		}
-
+				message: "Not find user"
+			})
+		}console.log("yeee")
+		//creamos token
 		const token = jwt.sign(
 			{
 				userId: user._id,
-				roleName: user.role,
+				roleName: user.role
 			},
 			process.env.JWT_SECRET,
 			{
-				expiresIn: "2h",
+				expiresIn: "200h"
 			}
-		);
-
-		res.status(200).json({
+		)
+		res.status(201).json({
 			success: true,
-			message: "User logged succesfully",
-			token: token, //MOSTRAMOS EL TOKEN DE MANERA TEMPORAL PARA PODER PROBAR CON ÉL OTRA FUNCIONALIDADES
-		});
+			message: "User login succesfully",
+			token: token
+		})
 	} catch (error) {
 		res.status(500).json({
 			success: false,
-			message: "User cant be logged",
-			error: error,
-		});
+			message: "User cant be login",
+			error: error
+		})
 	}
-};
+}
