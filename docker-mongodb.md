@@ -1,0 +1,1 @@
+ docker run -d -p 27017:27018 --name mongoSocialMedia -v socialMedia-data:/data/db -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=root mongo:latest
