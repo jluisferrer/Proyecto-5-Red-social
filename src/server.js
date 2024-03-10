@@ -1,5 +1,7 @@
 import express from "express";
 import 'dotenv/config';
+import { dbConnection } from "./database/db.js";
+import router from "./routes/router.js";
 
 const app = express()
 
@@ -10,23 +12,23 @@ const PORT = process.env.PORT ||4004;
 
 // API ROUTES
 app.get('/api/healthy', (req, res) => {
-    res.status(200).json({
-        syccess: true,
-        message: "server is healthy"
-    })
+  res.status(200).json(
+    {
+      success: true,
+      message: "server is healthy"
+    }
+  )
 })
 
 app.use('/api', router)
 
-
-dbConnection() // o por ejemplo appDataSource (como en typeorm)
-    .then(() => {
-        console.log("Database connected");
-
-        app.listen(PORT, () => {
-            console.log(`Server running on port ${PORT}`);
-        })
-    })
-    .catch(error => {
-        console.log(error);
-    })
+dbConnection()
+.then(() =>{
+  console.log("Database connected");
+  app.listen(PORT, () => {
+    console.log(`Server running o port ${PORT}`);
+  })
+})
+.catch(error => {
+  console.log(error);
+})

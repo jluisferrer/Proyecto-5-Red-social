@@ -9,6 +9,7 @@
     "dev": "nodemon ./src/server.js",
     "user-seed": "./database/seeder/userSeed"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
