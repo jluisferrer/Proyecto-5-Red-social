@@ -23,5 +23,4 @@ const PostSchema = new Schema(
 )
 
 const Post = model('Post', PostSchema)
-
 export default Post
