@@ -1,4 +1,6 @@
+import { populate } from "dotenv";
 import Post from "../models/Post.js";
+import User from "../models/User.js";
 
 export const newPost = async (req, res) => {
     try {
@@ -62,13 +64,13 @@ export const updatePostById = async (req, res) => {
             })
         }
         const modifiedPost = await Post.findByIdAndUpdate
-        (postId,
-         {
-            description: newDescription,
-        },
-        {
-            new: true
-        })
+            (postId,
+                {
+                    description: newDescription,
+                },
+                {
+                    new: true
+                })
 
         res.status(201).json({
             success: true,
@@ -81,5 +83,27 @@ export const updatePostById = async (req, res) => {
             message: "The post is not found",
             error: error
         })
+    }
+}
+
+export const getOwnPost = async (req, res) => {
+    try {
+        const userId = req.tokenData.userId
+        const posts = await Post.find({ userId })
+
+        res.status(201).json(
+            {
+                success: true,
+                message: "Posts retrieved successfully",
+                data: posts
+            }
+        );
+    } catch (error) {
+        res.status(500).json(
+            {
+                success: false,
+                message: "Posts cant retrieved",
+                error: error
+            })
     }
 }
