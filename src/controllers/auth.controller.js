@@ -51,7 +51,7 @@ export const login = async (req, res) => {
 				success: false,
 				message: "Email and password are required"
 			})
-		}console.log("yeee")
+		}
 		const validEmail = isValidMail(email)
 		const validPassword = isValidPassword(password)
 
@@ -60,7 +60,7 @@ export const login = async (req, res) => {
 				success: false,
 				message: "Email or password invalid"
 			})
-		}console.log("yeee")
+		}
 		const user = await User.findOne({ email: email })
 
 		if (!user) {
@@ -68,7 +68,7 @@ export const login = async (req, res) => {
 				success: false,
 				message: "Not find user"
 			})
-		}console.log("yeee")
+		}
 		//creamos token
 		const token = jwt.sign(
 			{
