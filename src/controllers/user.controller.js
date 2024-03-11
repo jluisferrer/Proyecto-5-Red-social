@@ -49,7 +49,7 @@ export const updateUserProfile = async (req, res) => {
         if (!updateData) {
             return res.status(400).json(
                 {
-                    success: true,
+                    success: false,
                     message: "No changes detected. User cant be updated",
                 }
             )
