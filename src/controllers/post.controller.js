@@ -31,3 +31,21 @@ export const newPost = async (req, res)=>{
         
     }
 }
+
+export const deletePostById = async (req,res)=>{
+    try {
+        const postId = req.params.id 
+        const deletedPost = await Post.findOneAndDelete(postId)   
+        res.status(201).json({
+			success: true,
+			message: "Post successfully deleted",
+			token: deletedPost
+		})
+    } catch (error) {
+        res.status(500).json({
+			success: false,
+			message: "Post could not be deleted",
+			error: error
+		})
+    }
+}
