@@ -1,6 +1,5 @@
-import { populate } from "dotenv";
 import Post from "../models/Post.js";
-import User from "../models/User.js";
+
 
 export const newPost = async (req, res) => {
     try {
@@ -94,10 +93,51 @@ export const getOwnPost = async (req, res) => {
         res.status(201).json(
             {
                 success: true,
-                message: "Posts retrieved successfully",
+                message: "User posts retrieved successfully",
                 data: posts
             }
         );
+    } catch (error) {
+        res.status(500).json(
+            {
+                success: false,
+                message: "User posts cant retrieved",
+                error: error
+            })
+    }
+}
+
+export const getAllPosts = async (req, res) => {
+    try {
+        const findPosts = await Post.find()
+        res.status(201).json(
+            {
+                success: true,
+                message: "Posts retrieved successfully",
+                data: findPosts
+            })
+    } catch (error) {
+        res.status(500).json(
+            {
+                success: false,
+                message: "Posts cant retrieved",
+                error: error
+            })
+    }
+}
+
+export const getPostsById = async (req, res)=>{
+    try {
+        const postsId = req.params.id
+        const postsById= await Post.findById({
+            _id: postsId
+        })
+        res.status(201).json(
+            {
+                success: true,
+                message: "Posts retrieved successfully",
+                data: postsById
+            })
     } catch (error) {
         res.status(500).json(
             {

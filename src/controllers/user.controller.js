@@ -3,11 +3,7 @@ import User from "../models/User.js";
 export const getUsers = async (req, res) => {
     try {
         const users = await User.find()
-        // const page = req.query.page || 1
-        // const limit = 2
-        // const usersDisplay = await User.find().skip((Number(page) - 1) * limit).limit(limit)
-
-        res.status(200).json({
+            res.status(200).json({
             success: true,
             message: `Total of ${users.length} users found.`,
             data: users
