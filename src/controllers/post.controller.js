@@ -126,10 +126,10 @@ export const getAllPosts = async (req, res) => {
     }
 }
 
-export const getPostsById = async (req, res)=>{
+export const getPostsById = async (req, res) => {
     try {
         const postsId = req.params.id
-        const postsById= await Post.findById({
+        const postsById = await Post.findById({
             _id: postsId
         })
         res.status(201).json(
@@ -147,3 +147,25 @@ export const getPostsById = async (req, res)=>{
             })
     }
 }
+
+export const getPostsByUserId = async (req, res) => {
+    try {
+        const userId = req.params.userId
+        const posts = await Post.find({ userId }).select('description').select('userId');
+
+        res.status(201).json(
+            {
+                success: true,
+                message: "Users posts retrieved successfully",
+                data: posts,
+            })
+    } catch (error) {
+        res.status(500).json(
+            {
+                success: false,
+                message: "Users posts cant retrieved",
+                error: error
+            })
+    }
+}
+
