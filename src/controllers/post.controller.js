@@ -40,7 +40,7 @@ export const deletePostById = async (req, res) => {
         res.status(201).json({
             success: true,
             message: "Post successfully deleted",
-            token: deletedPost
+            data: deletedPost
         })
     } catch (error) {
         res.status(500).json({
@@ -199,11 +199,11 @@ export const likePost = async (req, res) => {
                 message: "Post like succesfully",
             })
         }
-        if (findUser) {                                                     
+        if (findUser) {
             for (let i = 0; i < findPost.likes.length; i++) {    //El bucle for contunuara mientras i sea menor que la longitud de la matriz `likes`del objeto findPost
- // En cada iteración del bucle, se comprueba si el elemento en la posición i de la matriz likes de findPost es igual al ID de usuario (userId).
- // Para asegurarse de que se comparen como Strings, el userId se convierte en una String mediante ${userId} y se compara con el resultado de findPost.likes[i].toString().               
-                if (findPost.likes[i].toString() === `${userId}`) { 
+                // En cada iteración del bucle, se comprueba si el elemento en la posición i de la matriz likes de findPost es igual al ID de usuario (userId).
+                // Para asegurarse de que se comparen como Strings, el userId se convierte en una String mediante ${userId} y se compara con el resultado de findPost.likes[i].toString().               
+                if (findPost.likes[i].toString() === `${userId}`) {
                     findPost.likes.splice(i, 1) // Si el ID del usuario se encuentra en likes se utiliza splice para eliminar el elemento de la matriz
                     await findPost.save();// Despues de modificar likes se guarda el documento findPOst esperando a que la promesa se resuelva antes con el await
                 }
