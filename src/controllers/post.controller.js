@@ -88,7 +88,7 @@ export const updatePostById = async (req, res) => {
 export const getOwnPost = async (req, res) => {
     try {
         const userId = req.tokenData.userId
-        const posts = await Post.find({ userId })
+        const posts = await Post.find({ userId }).select('description')
 
         res.status(201).json(
             {
@@ -129,9 +129,7 @@ export const getAllPosts = async (req, res) => {
 export const getPostsById = async (req, res) => {
     try {
         const postsId = req.params.id
-        const postsById = await Post.findById({
-            _id: postsId
-        })
+        const postsById = await Post.findById(postsId).select('description')
         res.status(201).json(
             {
                 success: true,
