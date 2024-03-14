@@ -8,7 +8,7 @@ import { dbConnection } from "../db.js";
 const userSeeder = async () => {
     try {
         await dbConnection();
-        console.log("Connected to MongoDB");
+        console.log("Connected");
 
         const user = await User.create([
             {   username: "Superadmin",
@@ -43,16 +43,16 @@ const postSeeder = async () => {
     try {
         const post = await Post.create([
             {
-                description: "description1",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 userId: new mongoose.Types.ObjectId("65f1d1a452bdb6b863bc15a3"),
             },
             {
-                description: "description2",
+                description: "In hac habitasse platea dictumst",
                 userId: new mongoose.Types.ObjectId("65f1d1f552bdb6b863bc15a6"),
             },
             {
 
-                description: "description3",
+                description: "Blablablablalbla blablabla",
                 userId: new mongoose.Types.ObjectId("65f1de4dc759c3f870141b84"),
             },
         ]);
