@@ -21,7 +21,7 @@ export const register = async (req, res) => {
 		if (!validMail || !validPassword) {
 			return res.status(400).json({
 				success: false,
-				message: "format email or password invalid"
+				message: "Format email or password invalid"
 			})
 		}
 		//creamos nuevo usuario con username, mail y password.
