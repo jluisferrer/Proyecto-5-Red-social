@@ -1,0 +1,320 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "RED SOCIAL FL0",
+    "dateExported": "2024-03-19T19:50:15.901Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "d5930bdd-776a-46c6-ab86-6a1bceed7e9e",
+            "name": "Auth routes",
+            "containerId": "",
+            "created": "2024-03-14T18:18:40.833Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "5a817137-285a-4dd5-8b7f-d187a4e1aa21",
+            "name": "User routes",
+            "containerId": "",
+            "created": "2024-03-14T18:18:40.834Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "c5919785-0613-4b17-9fab-73db50383e56",
+            "name": "Post routes",
+            "containerId": "",
+            "created": "2024-03-14T18:18:40.835Z",
+            "sortNum": 60000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "442d55a6-5b9f-43a9-911b-5ac8980e99f2",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "d5930bdd-776a-46c6-ab86-6a1bceed7e9e",
+            "name": "REGISTER",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/auth/register",
+            "method": "POST",
+            "sortNum": 5000,
+            "created": "2024-03-14T18:18:40.834Z",
+            "modified": "2024-03-19T12:44:13.351Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\":\"superadmin\",\n  \"email\":\"Superadmin@superadmin.com\",\n  \"password\":\"12345678\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "8a8843f6-6d22-485a-bf2c-776b0edc8d67",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "d5930bdd-776a-46c6-ab86-6a1bceed7e9e",
+            "name": "LOGIN",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-14T18:18:40.833Z",
+            "modified": "2024-03-19T12:37:25.214Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"Superadmin@superadmin.com\",\n  \"password\":\"12345678\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "1738c8d3-1d13-4604-bfe5-71f1278141a8",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "5a817137-285a-4dd5-8b7f-d187a4e1aa21",
+            "name": "Get all Users",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/users?username=User",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-14T18:18:40.835Z",
+            "modified": "2024-03-19T14:08:42.823Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "username",
+                    "value": "User",
+                    "isPath": false
+                }
+            ],
+            "reqType": "get",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWY5OWM5MDI3NWE4YTFkYTFiZDhhY2UiLCJyb2xlTmFtZSI6InVzZXIiLCJpYXQiOjE3MTA4NTczNjYsImV4cCI6MTcxMTU3NzM2Nn0.a0ZxCxzAlfLYcHF4pLRTSLxckEGKou9gnxY_3FoRj6s"
+            },
+            "tests": []
+        },
+        {
+            "_id": "8298c240-3da7-4314-a4dd-4cc30a049502",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "5a817137-285a-4dd5-8b7f-d187a4e1aa21",
+            "name": "Get User Profile",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/users/profile",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-14T18:18:40.836Z",
+            "modified": "2024-03-19T14:09:00.215Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWY5OWM5MDI3NWE4YTFkYTFiZDhhY2UiLCJyb2xlTmFtZSI6InVzZXIiLCJpYXQiOjE3MTA4NTczNjYsImV4cCI6MTcxMTU3NzM2Nn0.a0ZxCxzAlfLYcHF4pLRTSLxckEGKou9gnxY_3FoRj6s"
+            },
+            "tests": []
+        },
+        {
+            "_id": "8ccd5c81-56c9-4bdd-b005-16367a29846c",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "5a817137-285a-4dd5-8b7f-d187a4e1aa21",
+            "name": "Update User Profile",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/users/profile",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-14T18:18:40.837Z",
+            "modified": "2024-03-14T21:09:36.749Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"ElAmo\"\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWYxZDFhNDUyYmRiNmI4NjNiYzE1YTMiLCJyb2xlTmFtZSI6InVzZXIiLCJpYXQiOjE3MTAzNDY2NzAsImV4cCI6MTcxMTA2NjY3MH0.FIL9iD0rzNAKEDUf3O_kfbcLbpJGLDAFNLzTpFlynCo"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b1ba88f5-2123-4545-9d7a-a081c38f009a",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "5a817137-285a-4dd5-8b7f-d187a4e1aa21",
+            "name": "Delete User by ID",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/users/65ee1d112cc7a321817bd637",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-03-14T18:18:40.838Z",
+            "modified": "2024-03-14T18:20:27.482Z",
+            "headers": [],
+            "params": [],
+            "reqType": "del",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWVlMWM0NGNkYmRkOTdjNzk5ZTRlNzAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwMTEzOTQzLCJleHAiOjE3MTA4MzM5NDN9.32e-ZF7iZ_YLgPqzMYfSb6Bf95Lr9Fyo6vxjGorQFfg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a19e573d-ac26-4da2-925b-2ae6431d0539",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "c5919785-0613-4b17-9fab-73db50383e56",
+            "name": "New Post",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/posts",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-03-14T18:18:40.839Z",
+            "modified": "2024-03-14T21:19:11.006Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"description\":\"probandooo otraaaa\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWYxZDFmNTUyYmRiNmI4NjNiYzE1YTYiLCJyb2xlTmFtZSI6InVzZXIiLCJpYXQiOjE3MTAzNDY3NTcsImV4cCI6MTcxMTA2Njc1N30.SgV1fjqzB27ajDfK9cyf8EoWQbQvNvyuvngg31wEo2I"
+            },
+            "tests": []
+        },
+        {
+            "_id": "95abb424-000e-40be-98ed-12ee118cdb3d",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "5a817137-285a-4dd5-8b7f-d187a4e1aa21",
+            "name": "Get Posts by User ID",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/users/posts/65f98b340aa22bb86d80f06a",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-14T18:18:40.840Z",
+            "modified": "2024-03-19T12:57:06.662Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWVlMWM0NGNkYmRkOTdjNzk5ZTRlNzAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwMTc5MzYwLCJleHAiOjE3MTA4OTkzNjB9.X9KpwLbJbzKPslghdKI8zBl4vDAhbdqbIwyMPyS1KsQ"
+            },
+            "tests": []
+        },
+        {
+            "_id": "fb270d01-c3fb-4380-a158-8b153af97f6e",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "c5919785-0613-4b17-9fab-73db50383e56",
+            "name": "Delete Post by ID",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/posts/65ef44afc4e497e6dfb98b69",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-03-14T18:18:40.841Z",
+            "modified": "2024-03-14T21:18:53.692Z",
+            "headers": [],
+            "params": [],
+            "reqType": "del",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWVlMWM0NGNkYmRkOTdjNzk5ZTRlNzAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwMTc5MzYwLCJleHAiOjE3MTA4OTkzNjB9.X9KpwLbJbzKPslghdKI8zBl4vDAhbdqbIwyMPyS1KsQ"
+            },
+            "tests": []
+        },
+        {
+            "_id": "29bdd5e5-5ca3-4faf-98b7-3045787ed8e5",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "c5919785-0613-4b17-9fab-73db50383e56",
+            "name": "Update Post by ID",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/posts/65f335a361c460c18967930d",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2024-03-14T18:18:40.842Z",
+            "modified": "2024-03-14T21:31:22.902Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"description\": \"probando asdsasdsdsdadssad\"\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWVlMWM0NGNkYmRkOTdjNzk5ZTRlNzAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwMTc5MzYwLCJleHAiOjE3MTA4OTkzNjB9.X9KpwLbJbzKPslghdKI8zBl4vDAhbdqbIwyMPyS1KsQ"
+            },
+            "tests": []
+        },
+        {
+            "_id": "fa1228aa-523b-4d35-bc5f-2e4d03d1214f",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "c5919785-0613-4b17-9fab-73db50383e56",
+            "name": "Get All Posts",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/posts/",
+            "method": "GET",
+            "sortNum": 85000,
+            "created": "2024-03-14T18:18:40.843Z",
+            "modified": "2024-03-19T14:45:18.251Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWY5ODhkZDBiY2Y0NGY3OTg4YTJkYjAiLCJyb2xlTmFtZSI6InVzZXIiLCJpYXQiOjE3MTA4NTIzMjIsImV4cCI6MTcxMTU3MjMyMn0.S5nFQPspTFnZuzmZNmGC_bVPMhth46CkdZnapCKlsDA"
+            },
+            "tests": []
+        },
+        {
+            "_id": "98451919-dbb0-41bf-89a3-0d19dba81874",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "c5919785-0613-4b17-9fab-73db50383e56",
+            "name": "Get Own Posts",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/posts/own",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-03-14T18:18:40.844Z",
+            "modified": "2024-03-19T14:46:32.347Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWY5OWM5MDI3NWE4YTFkYTFiZDhhY2UiLCJyb2xlTmFtZSI6InVzZXIiLCJpYXQiOjE3MTA4NTczNjYsImV4cCI6MTcxMTU3NzM2Nn0.a0ZxCxzAlfLYcHF4pLRTSLxckEGKou9gnxY_3FoRj6s"
+            },
+            "tests": []
+        },
+        {
+            "_id": "323a4f0f-5f50-444b-9f81-0699bc2ce3df",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "c5919785-0613-4b17-9fab-73db50383e56",
+            "name": "Get Posts by ID",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/posts/65f335a361c460c18967930d",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-03-14T18:18:40.845Z",
+            "modified": "2024-03-14T21:25:45.149Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWVlMWM0NGNkYmRkOTdjNzk5ZTRlNzAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwMTc5MzYwLCJleHAiOjE3MTA4OTkzNjB9.X9KpwLbJbzKPslghdKI8zBl4vDAhbdqbIwyMPyS1KsQ"
+            },
+            "tests": []
+        },
+        {
+            "_id": "4d8e5f96-6893-42cc-96b3-8f583468a882",
+            "colId": "1b8d148c-2262-44d7-a0cd-9c5493492bc3",
+            "containerId": "c5919785-0613-4b17-9fab-73db50383e56",
+            "name": "Like Post",
+            "url": "https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/posts/like/65f1d29b52bdb6b863bc15b2",
+            "method": "PUT",
+            "sortNum": 130000,
+            "created": "2024-03-14T18:18:40.846Z",
+            "modified": "2024-03-14T21:17:59.013Z",
+            "headers": [],
+            "params": [],
+            "reqType": "put",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWYxZDFhNDUyYmRiNmI4NjNiYzE1YTMiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwMzQ3NzU2LCJleHAiOjE3MTEwNjc3NTZ9.Z5pllLP9ehY2gOgb_MD6kqyt8h-ijgw-fSVorexzF1A"
+            },
+            "tests": []
+        }
+    ]
+}
