@@ -1,3 +1,6 @@
+
+<img src="https://previews.123rf.com/images/ideyweb/ideyweb1503/ideyweb150300109/38019476-concepto-de-red-social-medios-de-comunicaci%C3%B3n-gesti%C3%B3n-de-proyectos-gesti%C3%B3n-del-tiempo-la.jpg" />
+
 # Red Social ✒️
 
 Hola! este es mi quinto proyecto con la academia GeekHubs, se trata de una Red Social donde los usuarios pueden registrarse, loguearse e interactuar entre si creando posts y reaccionando con likes, asi como otras funciones que se detallan a continuación :
