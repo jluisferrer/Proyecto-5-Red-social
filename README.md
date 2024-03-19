@@ -227,7 +227,8 @@ PUT proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/posts/like/  <-- INTRODUZCA
 
 - **JOSE LUIS FERRER**
 
-<a href="https://linkedin.com/in/jose-luis-ferrer-martinez/" target="blank"><img align="left" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
-<a href="https://github.com/jluisferrer/" target="blank"><img align="left" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="jose-luis-ferrer-martinez/" height="30" width="40" /></a>
+<a href="https://linkedin.com/in/jose-luis-ferrer-martinez/" target="blank"><img align="left" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+
+<a href="https://github.com/jluisferrer/" target="blank"><img align="left" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="jose-luis-ferrer-martinez/"/></a>
 

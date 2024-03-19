@@ -22,6 +22,12 @@ export const getUserProfile = async (req, res) => {
         const userId = req.tokenData.userId
         const user = await User.findById(userId)
 
+        if (!userId) {
+            res.status(400).json({
+                success: false,
+                message: "User token required"
+            })
+        }
         res.status(200).json({
             success: true,
             message: "User retrieved succesfully",
@@ -42,6 +48,12 @@ export const updateUserProfile = async (req, res) => {
         const updateData = req.body
         const newUser = await User.findByIdAndUpdate(userId, updateData, { new: true })
 
+        if (!userId) {
+            res.status(400).json({
+                success: false,
+                message: "User token required"
+            })
+        }
         if (!updateData) {
             return res.status(400).json(
                 {
@@ -50,7 +62,6 @@ export const updateUserProfile = async (req, res) => {
                 }
             )
         }
-
         res.status(200).json({
             success: true,
             message: "User updated succesfully",
@@ -68,9 +79,14 @@ export const updateUserProfile = async (req, res) => {
 export const deleteUserById = async (req, res) => {
     try {
         const userId = req.params.id
-
         const userDeleted = await User.findByIdAndDelete(userId)
 
+        if (!userId) {
+            res.status(400).json({
+                success: false,
+                message: "User ID is required"
+            })
+        }
         res.status(200).json({
             success: true,
             message: "User deleted succesfully",

@@ -6,11 +6,17 @@ export const newPost = async (req, res) => {
         const userId = req.tokenData.userId
         const description = req.body.description.trim()
 
+        if (!userId) {
+            res.status(400).json({
+                success: false,
+                message: "User token required"
+            })
+        }
         if (!description) {
             return res.status(400).json(
                 {
                     success: false,
-                    message: "The post requires content",
+                    message: "The post requires content"
                 }
             )
         }
@@ -29,7 +35,6 @@ export const newPost = async (req, res) => {
             message: "Post cant be created",
             error: error
         })
-
     }
 }
 
@@ -37,6 +42,13 @@ export const deletePostById = async (req, res) => {
     try {
         const postId = req.params.id
         const deletedPost = await Post.findOneAndDelete(postId)
+
+        if (!postId) {
+            res.status(400).json({
+                success: false,
+                message: "The post is not found"
+            })
+        }
         res.status(201).json({
             success: true,
             message: "Post successfully deleted",
@@ -56,6 +68,12 @@ export const updatePostById = async (req, res) => {
         const postId = req.params.id
         const newDescription = req.body.description
 
+        if (!postId) {
+            res.status(400).json({
+                success: false,
+                message: "The post is not found"
+            })
+        }
         if (!newDescription) {
             res.status(400).json({
                 success: false,
@@ -90,6 +108,18 @@ export const getOwnPost = async (req, res) => {
         const userId = req.tokenData.userId
         const posts = await Post.find({ userId }).select('description')
 
+        if (!userId) {
+            res.status(400).json({
+                success: false,
+                message: "User token required"
+            })
+        }
+        if (!posts) {
+            res.status(400).json({
+                success: false,
+                message: "Posts cant found"
+            })
+        }
         res.status(201).json(
             {
                 success: true,
@@ -110,6 +140,13 @@ export const getOwnPost = async (req, res) => {
 export const getAllPosts = async (req, res) => {
     try {
         const findPosts = await Post.find()
+
+        if (!findPosts) {
+            res.status(400).json({
+                success: false,
+                message: "The post is not found"
+            })
+        }
         res.status(201).json(
             {
                 success: true,
@@ -130,6 +167,13 @@ export const getPostsById = async (req, res) => {
     try {
         const postsId = req.params.id
         const postsById = await Post.findById(postsId).select('description')
+
+        if (!postsId || !postsById) {
+            res.status(400).json({
+                success: false,
+                message: "The post is not found"
+            })
+        }
         res.status(201).json(
             {
                 success: true,
@@ -151,6 +195,18 @@ export const getPostsByUserId = async (req, res) => {
         const userId = req.params.userId
         const posts = await Post.find({ userId }).select('description').select('userId');
 
+        if (!userId) {
+            res.status(400).json({
+                success: false,
+                message: "User is not found"
+            })
+        }
+        if (!posts) {
+            res.status(400).json({
+                success: false,
+                message: "The post is not found"
+            })
+        }
         res.status(201).json(
             {
                 success: true,
