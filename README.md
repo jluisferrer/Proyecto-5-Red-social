@@ -1,18 +1,15 @@
 # Red Social ✒️
 
-Hola! es mi quinto proyecto con la academia GeekHubs, se trata de una Red Social donde los usuarios pueden registrarse, loguearse e interactuar entre si creando posts y reaccionando con likes, asi como otras funciones que se detallan a continuación 
+Hola! este es mi quinto proyecto con la academia GeekHubs, se trata de una Red Social donde los usuarios pueden registrarse, loguearse e interactuar entre si creando posts y reaccionando con likes, asi como otras funciones que se detallan a continuación :
 
 <summary> Indice 🧾</summary>
 
 
 - [Tecnologias usadas ⚙](#tecnologias-)
-- [Esquema 🗺️](#esquema)
 - [Instalación 🏗️](#instalacion-)
 - [Deploy 🚀](#deploy-)
 - [Endpoints 🎛️](#endpoints)
-- [Fallos 🕷️](#fallos-)
 - [Autor 🎨](#autor-)
-- [Tiempo de realización ⏳](#tiempo-de-realizacion-)
 
 
 ## Tecnologias usadas
@@ -30,12 +27,11 @@ alt="Express" />
 
 <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
 
-## Esquema 
-
-![SchemeStudioTatoo](https://github.com/jluisferrer/Proyecto-4/assets/157707370/e2c1e793-a0b1-4ec8-bc78-fe80c9badaad)
+<img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"/>
 
 
-## Instalación
+
+## Instalación 🏗️
 
 <details>
 
@@ -45,7 +41,7 @@ alt="Express" />
 
 ***Clonar el repositorio***
 ```sh
-git clone
+git clone https://github.com/jluisferrer/Proyecto-5-Red-social
 ```
 
 **2**
@@ -67,6 +63,7 @@ npm run dev
 ```
 
 **5**
+
 ***Agregar datos a las tablas***
 ***Esto agregará un usuario con cada rol(superadmin, admin y user) asi como un post con cada uno***
 
@@ -76,13 +73,15 @@ npm run run-seeders
 
 </details>
 
-## Deploy
+## Deploy 🚀
 
 ```sh
-(https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io)
+https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io
 ```
 
-## Endpoints
+## Endpoints 🎛️
+
+<details>
 
 ***Instalación de Thunder Client para VSC***
 
@@ -219,17 +218,13 @@ GET proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/posts/  <-- INTRODUZCA AQUI
 PUT proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io/api/posts/like/  <-- INTRODUZCA AQUI EL ID DEL POST QUE DESEA DAR LIKE O QUITAR EL LIKE, NECESITA ESTAR LOGUEADO Y TENER SU TOKEN DE AUTENTIFICACION
  ```
 
+</details>
 
-## FALLOS 🕷️
-
-**Al ejecutar el "appointmentSeeder.ts" aparece el siguiente mensaje aún así las citas se guardan a partir del id:2**
-
-```sh
-throw new CannotExecuteNotConnectedError(this.name)
-                  ^
-CannotExecuteNotConnectedError: Cannot execute operation on "default" connection because connection is not yet established.
-```
-
-## AUTOR
+## AUTOR 🎨
 
 - **JOSE LUIS FERRER**
+
+<a href="https://linkedin.com/in/jose-luis-ferrer-martinez/" target="blank"><img align="left" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+
+<a href="https://github.com/jluisferrer/" target="blank"><img align="left" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="jose-luis-ferrer-martinez/" height="30" width="40" /></a>
+
