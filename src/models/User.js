@@ -22,14 +22,6 @@ const UserSchema = new Schema(
             enum: ["user", "admin", "super_admin"],
             default: "user"
         },
-        profile: {
-            name: {
-                type: String
-            },
-            bio: {
-                type: String
-            }
-        }
     },
     {
         timestamps: true,

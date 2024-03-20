@@ -232,21 +232,21 @@ export const likePost = async (req, res) => {
             _id: postId
         })
         //Devolvemos mensaje de error si no se encuentra el post 
-        if (!findPost) {                                              
-          return  res.status(500).json(
+        if (!findPost) {
+            return res.status(500).json(
                 {
                     success: false,
                     message: "Post cant found",
                     error: error
                 })
         }
-         //Buscamos si el usuario a dado like al post con el id del post y el id del user
-        const findUser = await Post.findOne({ 
+        //Buscamos si el usuario a dado like al post con el id del post y el id del user
+        const findUser = await Post.findOne({
             _id: postId,
             likes: userId
         })
-         //Si no se encuentra el usuario agrega su Id a la lista de likes del psot y guardamos
-        if (!findUser) {                       
+        //Si no se encuentra el usuario agrega su Id a la lista de likes del psot y guardamos
+        if (!findUser) {
             findPost.likes.push(userId)
             await findPost.save();
             return res.status(201).json({
@@ -256,17 +256,16 @@ export const likePost = async (req, res) => {
         }
         if (findUser) {
             findUser.likes.includes(userId)
-            if(findUser.likes.includes(userId)){
-            //
+            if (findUser.likes.includes(userId)) {                
             }
-        //El bucle for contunuara mientras i sea menor que la longitud de la matriz `likes`del objeto findPost
-            for (let i = 0; i < findPost.likes.length; i++) {   
-        // En cada iteración del bucle, se comprueba si el elemento en la posición i de la matriz likes de findPost es igual al ID de usuario (userId).
-        // Para asegurarse de que se comparen como Strings, el userId se convierte en una String mediante ${userId} y se compara con el resultado de findPost.likes[i].toString().               
+                //El bucle for contunuara mientras i sea menor que la longitud de la matriz `likes`del objeto findPost
+            for (let i = 0; i < findPost.likes.length; i++) {
+                // En cada iteración del bucle, se comprueba si el elemento en la posición i de la matriz likes de findPost es igual al ID de usuario (userId).
+                // Para asegurarse de que se comparen como Strings, el userId se convierte en una String mediante ${userId} y se compara con el resultado de findPost.likes[i].toString().               
                 if (findPost.likes[i].toString() === `${userId}`) {
-        // Si el ID del usuario se encuentra en likes se utiliza splice para eliminar el elemento de la matriz
-                    findPost.likes.splice(i, 1) 
-        // Despues de modificar likes se guarda el documento findPOst esperando a que la promesa se resuelva antes con el await
+                // Si el ID del usuario se encuentra en likes se utiliza splice para eliminar el elemento de la matriz
+                    findPost.likes.splice(i, 1)
+                // Despues de modificar likes se guarda el documento findPOst esperando a que la promesa se resuelva antes con el await
                     await findPost.save();
                 }
             }
