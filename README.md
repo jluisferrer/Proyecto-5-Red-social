@@ -41,7 +41,8 @@ alt="Express" />
 ## Esquema
 
 
-![esquema](https://github.com/jluisferrer/Proyecto-5-Red-social/assets/157707370/1f011cbf-45e8-4ae5-ba6f-9ddecacb5b0d)
+![esquemaa](https://github.com/jluisferrer/Proyecto-5-Red-social/assets/157707370/bcefaf46-69c6-4120-9aec-0c7a4aceddf6)
+
 
 
 ## Instalación 🏗️
