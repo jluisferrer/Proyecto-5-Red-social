@@ -1,4 +1,6 @@
-C:\Users\jluis\Desktop\BootCamp\Proyectos\Proyecto 5 Red social\img\southpark.png
+
+
+![southpark](https://github.com/jluisferrer/Proyecto-5-Red-social/assets/157707370/36386569-738d-4227-ab91-d36187b54b66)
 
 
 # Red Social ✒️
@@ -37,7 +39,8 @@ alt="Express" />
 
 ## Esquema
 
-C:\Users\jluis\Desktop\BootCamp\Proyectos\Proyecto 5 Red social\img\esquema.jpg
+
+![esquema](https://github.com/jluisferrer/Proyecto-5-Red-social/assets/157707370/1f011cbf-45e8-4ae5-ba6f-9ddecacb5b0d)
 
 
 ## Instalación 🏗️
