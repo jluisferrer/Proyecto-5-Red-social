@@ -1,5 +1,5 @@
+C:\Users\jluis\Desktop\BootCamp\Proyectos\Proyecto 5 Red social\img\southpark.png
 
-![SouthPark](image.png)
 
 # Red Social ✒️
 
@@ -37,7 +37,7 @@ alt="Express" />
 
 ## Esquema
 
-![esquema](esquema.jpg)
+C:\Users\jluis\Desktop\BootCamp\Proyectos\Proyecto 5 Red social\img\esquema.jpg
 
 
 ## Instalación 🏗️
