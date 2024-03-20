@@ -95,7 +95,7 @@ https://proyecto-5-red-social-dev-pjth.1.ie-1.fl0.io
 ***Instalación de Thunder Client para VSC***
 
 Dentro de Visual studio code en el apartado extensiones (normalmente alojado en la parte inferior izquierda) deberá buscar "Thunder Client" e instalar el plugin. 
-Junto con el proyecto en la carpeta /HTTP se adjunta un archivo llamado "thunder-collection_STUDIO TATTOO.json" donde se encuentran todos los endpoints disponibles tanto en local como en FL{0} para agregar esta colección pulse sobre el icono de Thunder Client que aparecerá despues de instalarlo en su VSC vaya al apartado "Collections" haga clic en import y busque el archivo "thunder-collection_STUDIO TATTOO.json" para agregarlo. Así podra probar todas las funciones que ofrece este proyecto. A continuacón se muestran todos los edpoints disponibles:
+Junto con el proyecto en la carpeta /HTTP se adjunta un archivo llamado "thunder-collection_RED SOCIAL FL0/LOCAL.json" donde se encuentran todos los endpoints disponibles tanto en local como en FL{0} para agregar esta colección pulse sobre el icono de Thunder Client que aparecerá despues de instalarlo en su VSC vaya al apartado "Collections" haga clic en import y busque el archivo "thunder-collection_RED SOCIAL FL0/LOCAL.json" para agregarlo. Así podra probar todas las funciones que ofrece este proyecto. A continuación se muestran todos los edpoints disponibles:
 
 ***AUTH***
 
