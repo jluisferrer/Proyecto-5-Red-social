@@ -9,6 +9,7 @@ Hola! este es mi quinto proyecto con la academia GeekHubs, se trata de una Red S
 
 
 - [Tecnologias usadas ⚙](#tecnologias-)
+- [Esquema 📃](#esquema-)
 - [Instalación 🏗️](#instalacion-)
 - [Deploy 🚀](#deploy-)
 - [Endpoints 🎛️](#endpoints)
@@ -32,6 +33,11 @@ alt="Express" />
 
 <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"/>
 
+
+
+## Esquema
+
+![esquema](esquema.jpg)
 
 
 ## Instalación 🏗️
