@@ -1,6 +1,7 @@
 
 
-![southpark](https://github.com/jluisferrer/Proyecto-5-Red-social/assets/157707370/36386569-738d-4227-ab91-d36187b54b66)
+![soutpark](https://github.com/jluisferrer/Proyecto-5-Red-social/assets/157707370/689a443f-a0cc-4636-b163-23982a51d55d)
+
 
 
 # Red Social ✒️
