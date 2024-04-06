@@ -30,7 +30,7 @@ export const register = async (req, res) => {
 			email,
 			password
 		})
-		res.status(201).json({
+		return res.status(201).json({
 			success: true,
 			message: "User registered succesfully",
 		})
@@ -47,7 +47,7 @@ export const login = async (req, res) => {
 	try {
 		const { email, password } = req.body; //Validamos body
 		if (!email || !password) {
-			 res.status(400).json({
+			 return res.status(400).json({
 				success: false,
 				message: "Email and password are required"
 			})
@@ -56,7 +56,7 @@ export const login = async (req, res) => {
 		const validPassword = isValidPassword(password)
 
 		if (!validPassword || !validEmail) {
-			res.status(400).json({
+			return res.status(400).json({
 				success: false,
 				message: "Email or password invalid"
 			})
@@ -64,7 +64,7 @@ export const login = async (req, res) => {
 		const user = await User.findOne({ email: email })
 
 		if (!user) {
-			 res.status(400).json({
+			return res.status(400).json({
 				success: false,
 				message: "Not find user"
 			})
@@ -73,6 +73,7 @@ export const login = async (req, res) => {
 		const token = jwt.sign(
 			{
 				userId: user._id,
+				userName: user.username,
 				roleName: user.role
 			},
 			process.env.JWT_SECRET,
@@ -85,11 +86,11 @@ export const login = async (req, res) => {
 			message: "User login succesfully",
 			token: token
 		})
-	} catch (error) {
+	} catch (tokenError) {
 		res.status(500).json({
 			success: false,
-			message: "User cant be login",
-			error: error
+			message: "Error creating token",
+			error: tokenError.message
 		})
 	}
 }
