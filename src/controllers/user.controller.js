@@ -100,3 +100,45 @@ export const deleteUserById = async (req, res) => {
         })
     }
 }
+export const FollowUnfollowUser = async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const ownUserId = req.tokenData.userId;
+        const findUserId = await User.findById(userId);
+
+        if (!findUserId) {
+            throw new Error('User not found');
+        }
+        const findUserIdToFollow = await User.findOne({
+            _id: userId,
+            followers: ownUserId
+        });
+
+        const findMyUserIdToFollowing = await User.findOne({
+            _id: ownUserId
+        });
+        if (!findUserIdToFollow) {
+            findUserId.followers.push(ownUserId);
+            findMyUserIdToFollowing.following.push(userId);
+            await Promise.all([findUserId.save(), findMyUserIdToFollowing.save()]);
+            return res.status(201).json({
+                success: true,
+                message: "User Followed Successfully"
+            });
+        } else {
+            findUserId.followers = findUserId.followers.filter(follower => follower.toString() !== ownUserId);
+            findMyUserIdToFollowing.following = findMyUserIdToFollowing.following.filter(following => following.toString() !== userId);
+            await Promise.all([findUserId.save(), findMyUserIdToFollowing.save()]);
+            return res.status(201).json({
+                success: true,
+                message: "User UnFollowed Successfully"
+            });
+        }
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "User not found",
+            error: error
+        })
+    }
+}

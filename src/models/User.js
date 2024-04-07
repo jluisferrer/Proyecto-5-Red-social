@@ -22,6 +22,20 @@ const UserSchema = new Schema(
             enum: ["user", "admin", "super_admin"],
             default: "user"
         },
+        following: [
+            {
+              type: Schema.Types.ObjectId,
+              ref: "User",
+              default: [],
+            },
+          ],
+          followers: [
+            {
+              type: Schema.Types.ObjectId,
+              ref: "User",
+              default: [],
+            },
+          ],
     },
     {
         timestamps: true,
