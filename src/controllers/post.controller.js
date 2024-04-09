@@ -67,6 +67,7 @@ export const updatePostById = async (req, res) => {
     try {
         const postId = req.params.id
         const newDescription = req.body.description
+        const newtitle = req.body.title
 
         if (!postId) {
             res.status(400).json({
@@ -74,7 +75,7 @@ export const updatePostById = async (req, res) => {
                 message: "The post is not found"
             })
         }
-        if (!newDescription) {
+        if (!newDescription || !newtitle ) {
             res.status(400).json({
                 success: false,
                 message: "There are no changes to the post"
@@ -83,7 +84,7 @@ export const updatePostById = async (req, res) => {
         const modifiedPost = await Post.findByIdAndUpdate
             (postId,
                 {
-                    description: newDescription,
+                    description: newDescription, title:newtitle
                 },
                 {
                     new: true
@@ -101,6 +102,52 @@ export const updatePostById = async (req, res) => {
             error: error
         })
     }
+}
+
+export const UpdatePost = async (req, res) => {
+    try {
+        const postId = req.params.id
+        const userId = req.tokenData.userId
+        const newtitle = req.body.title
+        const newdescription = req.body.description
+
+        if (!newtitle || !newdescription) {
+            throw new Error('title or description is needed')
+        }
+
+        const findPost = await Post
+            .findOne({
+
+                _id: postId,
+                userId: userId
+
+            })
+        if (!findPost) {
+            throw new Error('User or post not found')
+        }
+
+        const modifiedPost = await Post
+            .findByIdAndUpdate( postId,{
+                    title: newtitle,
+                    description: newdescription
+            },
+                {
+                   new:true
+                })
+
+        res.status(201).json({
+            success: true,
+            message: "Post updated succesfully",
+            data: modifiedPost
+        })
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: "The post or user not found ",
+            error: error
+        })
+    }
+
 }
 
 export const getOwnPost = async (req, res) => {
