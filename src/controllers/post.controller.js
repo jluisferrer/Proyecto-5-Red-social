@@ -106,7 +106,7 @@ export const updatePostById = async (req, res) => {
 export const getOwnPost = async (req, res) => {
     try {
         const userId = req.tokenData.userId
-        const posts = await Post.find({ userId }).select('description')
+        const posts = await Post.find({ userId }).select('title description likes')
 
         if (!userId) {
             res.status(400).json({
@@ -139,7 +139,7 @@ export const getOwnPost = async (req, res) => {
 
 export const getAllPosts = async (req, res) => {
     try {
-        const findPosts = await Post.find()
+        const findPosts = await Post.find().populate('userId', 'username')
 
         if (!findPosts) {
             res.status(400).json({

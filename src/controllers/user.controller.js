@@ -123,7 +123,9 @@ export const FollowUnfollowUser = async (req, res) => {
             await Promise.all([findUserId.save(), findMyUserIdToFollowing.save()]);
             return res.status(201).json({
                 success: true,
-                message: "User Followed Successfully"
+                message: "User Followed Successfully",
+                followersCount: findUserId.followers.length,
+                followingCount: findMyUserIdToFollowing.following.length
             });
         } else {
             findUserId.followers = findUserId.followers.filter(follower => follower.toString() !== ownUserId);
@@ -131,7 +133,9 @@ export const FollowUnfollowUser = async (req, res) => {
             await Promise.all([findUserId.save(), findMyUserIdToFollowing.save()]);
             return res.status(201).json({
                 success: true,
-                message: "User UnFollowed Successfully"
+                message: "User UnFollowed Successfully",
+                followersCount: findUserId.followers.length,
+                followingCount: findMyUserIdToFollowing.following.length
             });
         }
     } catch (error) {

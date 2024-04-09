@@ -42,17 +42,17 @@ const userSeeder = async () => {
 const postSeeder = async () => {
     try {
         const post = await Post.create([
-            {
+            {   title:"title2",
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 userId: new mongoose.Types.ObjectId("65f1d1a452bdb6b863bc15a3"),
             },
-            {
+            {   title:"title2",
                 description: "In hac habitasse platea dictumst",
                 userId: new mongoose.Types.ObjectId("65f1d1f552bdb6b863bc15a6"),
             },
             {
-
-                description: "Blablablablalbla blablabla",
+                title: "blablabla3",
+                description: "Blablablablalbla blablablablalba",
                 userId: new mongoose.Types.ObjectId("65f1de4dc759c3f870141b84"),
             },
         ]);
