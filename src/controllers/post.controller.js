@@ -5,6 +5,7 @@ export const newPost = async (req, res) => {
     try {
         const userId = req.tokenData.userId
         const description = req.body.description.trim()
+        const title= req.body.title
 
         if (!userId) {
             res.status(400).json({
@@ -12,7 +13,7 @@ export const newPost = async (req, res) => {
                 message: "User token required"
             })
         }
-        if (!description) {
+        if (!description || !title) {
             return res.status(400).json(
                 {
                     success: false,
@@ -22,6 +23,7 @@ export const newPost = async (req, res) => {
         }
         const postNew = await Post.create({
             userId,
+            title,
             description
         })
         res.status(201).json({

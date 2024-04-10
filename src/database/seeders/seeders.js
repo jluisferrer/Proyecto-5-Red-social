@@ -31,6 +31,27 @@ const userSeeder = async () => {
                 password: bcrypt.hashSync('12345678', 10),
                 role: "user"
             },
+            {   
+                username: "User2",
+                _id: new mongoose.Types.ObjectId("65f1de4dc759c3f870141b85"),
+                email: "user2@user.com",
+                password: bcrypt.hashSync('12345678', 10),
+                role: "user"
+            },
+            {   
+                username: "User3",
+                _id: new mongoose.Types.ObjectId("65f1de4dc759c3f870141b86"),
+                email: "user3@user.com",
+                password: bcrypt.hashSync('12345678', 10),
+                role: "user"
+            },
+            {   
+                username: "User4",
+                _id: new mongoose.Types.ObjectId("65f1de4dc759c3f870141b87"),
+                email: "user4@user.com",
+                password: bcrypt.hashSync('12345678', 10),
+                role: "user"
+            },
         ]);
 
         console.log("User created");
@@ -51,9 +72,24 @@ const postSeeder = async () => {
                 userId: new mongoose.Types.ObjectId("65f1d1f552bdb6b863bc15a6"),
             },
             {
-                title: "blablabla3",
-                description: "Blablablablalbla blablablablalba",
+                title: "blablabl12313123213a3",
+                description: "Blablablablalbla bla12122121blablablalba",
                 userId: new mongoose.Types.ObjectId("65f1de4dc759c3f870141b84"),
+            },
+            {
+                title: "blablabla123131233",
+                description: "Blablablablalbla blablabla1231233123blalba",
+                userId: new mongoose.Types.ObjectId("65f1de4dc759c3f870141b85"),
+            },
+            {
+                title: "blablabla3",
+                description: "Blablablablalbla blablabla123123213123blalba",
+                userId: new mongoose.Types.ObjectId("65f1de4dc759c3f870141b86"),
+            },
+            {
+                title: "blablabla3",
+                description: "Blablablablalbla blablablabl12313alba",
+                userId: new mongoose.Types.ObjectId("65f1de4dc759c3f870141b87"),
             },
         ]);
         console.log("Posts created");
