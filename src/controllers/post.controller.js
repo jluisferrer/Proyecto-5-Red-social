@@ -215,7 +215,7 @@ export const getAllPosts = async (req, res) => {
 export const getPostsById = async (req, res) => {
     try {
         const postsId = req.params.id
-        const postsById = await Post.findById(postsId).select('description')
+        const postsById = await Post.findById(postsId).select('description title').populate('userId', 'username')
 
         if (!postsId || !postsById) {
             res.status(400).json({
